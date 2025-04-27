@@ -1,0 +1,16 @@
+<div class="max-w-4xl mx-auto p-6">
+  <h1 class="text-5xl font-bold mb-6 text-center">Posts</h1>
+
+  <app-post-form (submitPost)="onPostSubmit($event)"></app-post-form>
+
+  <div class="border border-dotted border-orange-600 mt-5"></div>
+
+  <div class="mt-8 grid gap-6">
+    <app-postcard
+      *ngFor="let post of posts"
+      [post]="post"
+      (viewDetails)="goToPostDetails($event)"
+      (delete)="onDeletePost($event)"
+    ></app-postcard>
+  </div>
+</div>
